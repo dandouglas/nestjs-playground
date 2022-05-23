@@ -2,6 +2,9 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
-    "nest-app": "apps/nest-app"
+    "todos": "apps/todos",
+    "todos-api": "apps/todos-api",
+    "todos-frontend": "apps/todos-frontend",
+    "todos-frontend-e2e": "apps/todos-frontend-e2e"
   }
 }
