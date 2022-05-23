@@ -19,6 +19,6 @@ export class AppComponent {
   }
 
   getTodos(): Observable<any> {
-    return this.httpClient.get('http://localhost:3333/api/todos');
+    return this.httpClient.get('http://localhost:3333/api');
   }
 }

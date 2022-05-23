@@ -1,14 +1,19 @@
-import { Controller, Get, Render } from '@nestjs/common';
+import { Controller, Get, Param, ParseIntPipe } from '@nestjs/common';
 
 import { TodoService } from './todo/todo.service';
 
-@Controller('api')
+@Controller('todos')
 export class AppController {
   constructor(private todoService: TodoService) {}
 
-  @Get('todos')
-  getData() {
+  @Get()
+  getTodos() {
     return { todos: this.todoService.getTodos() };
   }
 
-}
+  @Get(':id')
+    getTodo(@Param('id', ParseIntPipe) id: number) {
+      return this.todoService.getTodo(id);
+    }
+  }
+
